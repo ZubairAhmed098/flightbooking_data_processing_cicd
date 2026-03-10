@@ -3,7 +3,7 @@ name: Flight Booking CICD
 on:
   push:
     branches:
-      - dev
+      #- dev
       - main
 
 permissions:
@@ -102,7 +102,7 @@ jobs:
       - name: Upload Variables JSON to GCS
         run: |
           unset CLOUDSDK_CORE_PROJECT CLOUDSDK_PROJECT GCLOUD_PROJECT GCP_PROJECT GOOGLE_CLOUD_PROJECT
-          gsutil cp variables/prod/variables.json gs://europe-west1-airflow-prod-f68df5c8-bucket/data/prod/variables.json
+          gsutil cp variables/prod/variables.json gs://europe-west1-airflow-prod-da5d4182-bucket/data/prod/variables.json
 
       # Import Variables into Airflow-PROD
       - name: Import Variables into Airflow-PROD
