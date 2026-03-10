@@ -58,7 +58,7 @@ jobs:
       - name: Upload Spark Job to GCS
         run: |
           unset CLOUDSDK_CORE_PROJECT CLOUDSDK_PROJECT GCLOUD_PROJECT GCP_PROJECT GOOGLE_CLOUD_PROJECT
-          gsutil cp spark_job/spark_transformation_job.py gs://airflow-projects-bucket/flight-booking-analysis/spark-job/
+          gsutil cp spark_job/spark_transformation_job.py gs://airflow-projects-bucket-v1/flight-booking-analysis/spark-job/
 
       # Upload Airflow DAG to Composer DEV
       - name: Upload Airflow DAG to DEV Environment
@@ -116,7 +116,7 @@ jobs:
       - name: Upload Spark Job to GCS
         run: |
           unset CLOUDSDK_CORE_PROJECT CLOUDSDK_PROJECT GCLOUD_PROJECT GCP_PROJECT GOOGLE_CLOUD_PROJECT
-          gsutil cp spark_job/spark_transformation_job.py gs://airflow-projects-bucket/flight-booking-analysis/spark-job/
+          gsutil cp spark_job/spark_transformation_job.py gs://airflow-projects-bucket-v1/flight-booking-analysis/spark-job/
 
       # Upload Airflow DAG to Composer PROD
       - name: Upload Airflow DAG to PROD Environment
