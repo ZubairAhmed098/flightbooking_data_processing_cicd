@@ -31,12 +31,15 @@ jobs:
         with:
           workload_identity_provider: 'projects/611054035776/locations/global/workloadIdentityPools/flight-booking-cicd/providers/github'
           service_account: '611054035776-compute@developer.gserviceaccount.com'
-
+      
       # Setup Google Cloud SDK
       - name: Setup Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
+      
+      - name: Set GCP Project
+        run: gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
 
       # Upload `variables.json` to Composer bucket
       - name: Upload Variables JSON to GCS
